@@ -65,3 +65,6 @@ Website frontend using Bootstrap 5 for hotel booking interface.
 - Tables (striped, hover, bordered, dark)
 - Alerts and badges
 - Responsive images
+
+## Expanded Description
+Project structure: index.html (main page), css/ (styles), assets/ (images and vendor libraries). Built with Bootstrap 5. Includes responsive layout, booking form, and member roles documentation. Test via file:// protocol.
