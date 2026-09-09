@@ -8,8 +8,8 @@
   // Initialize newsletter form validation
   initNewsletterForm();
 
-  // Set up focus-visible states for accessibility
-  setupFocusStates();
+  // Initialize booking form validation
+  initBookingForm();
 
   // Initialize page on DOM ready
   document.addEventListener('DOMContentLoaded', function() {
@@ -73,21 +73,67 @@ function showAlert(alertElement, message, type) {
   alertElement.classList.add('show');
 }
 
-// ===== Setup Focus-Visible States =====
-function setupFocusStates() {
-  // Add focus-visible outline to interactive elements
-  const focusableElements = document.querySelectorAll(
-    'a:not([href^="#"]):not([disabled]), button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])'
-  );
+// ===== Booking Form Validation =====
+function initBookingForm() {
+  const form = document.getElementById('bookingForm');
+  if (!form) return;
 
-  focusableElements.forEach(function(el) {
-    el.addEventListener('focus', function() {
-      // Check if browser supports :focus-visible
-      if (el.style.outline !== 'none') {
-        el.style.outline = '2px solid var(--primary-blue)';
-        el.style.outlineOffset = '2px';
-      }
-    }, { once: true });
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const checkIn = form.querySelector('#checkIn');
+    const checkOut = form.querySelector('#checkOut');
+    const roomType = form.querySelector('#roomType');
+    const guests = form.querySelector('#guests');
+
+    let isValid = true;
+
+    // Reset previous validation states
+    [checkIn, checkOut, roomType, guests].forEach(function(field) {
+      field.classList.remove('is-invalid');
+    });
+
+    // Validate check-in date
+    if (!checkIn.value) {
+      checkIn.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    // Validate check-out date
+    if (!checkOut.value) {
+      checkOut.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    // Validate check-out is after check-in
+    if (checkIn.value && checkOut.value && new Date(checkOut.value) <= new Date(checkIn.value)) {
+      checkOut.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    // Validate room type
+    if (!roomType.value) {
+      roomType.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    // Validate guests
+    if (!guests.value || guests.value < 1) {
+      guests.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (isValid) {
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Booking...';
+      btn.disabled = true;
+
+      setTimeout(function() {
+        btn.textContent = 'Booked!';
+        btn.classList.replace('btn-primary', 'btn-success');
+      }, 800);
+    }
   });
 }
 

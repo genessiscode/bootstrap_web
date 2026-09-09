@@ -146,6 +146,51 @@
   </section>
   <!-- End Rooms -->
 
+  <!-- ===== Booking Form Section ===== -->
+  <section id="booking" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Book Your Stay</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-body p-4">
+              <form id="bookingForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="checkIn" class="form-label">Check-in Date</label>
+                    <input type="date" class="form-control" id="checkIn" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="checkOut" class="form-label">Check-out Date</label>
+                    <input type="date" class="form-control" id="checkOut" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="roomType" class="form-label">Room Type</label>
+                    <select class="form-select" id="roomType" required>
+                      <option value="" disabled selected>Select a room</option>
+                      <option value="deluxe">Deluxe Room - $129/night</option>
+                      <option value="suite">Suite - $229/night</option>
+                      <option value="budget">Budget Room - $89/night</option>
+                      <option value="family">Family Room - $179/night</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="guests" class="form-label">Number of Guests</label>
+                    <input type="number" class="form-control" id="guests" min="1" max="6" required>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <button type="submit" class="btn btn-primary w-100">Check Availability</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Booking Form -->
+
   <!-- ===== Room Pricing Table ===== -->
   <section id="pricing-table" class="py-5">
     <div class="container">
