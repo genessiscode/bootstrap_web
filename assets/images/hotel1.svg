@@ -1,10 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
-  <rect width="600" height="400" fill="rgb(240,240,240)"/>
-  <rect x="80" y="80" width="440" height="280" rx="20" fill="rgb(255,255,255)"/>
-  <rect x="150" y="130" width="300" height="220" rx="15" fill="rgb(230,230,230)"/>
-  <circle cx="220" cy="200" r="20" fill="rgb(200,200,200)"/>
-  <circle cx="300" cy="200" r="20" fill="rgb(200,200,200)"/>
-  <circle cx="380" cy="200" r="20" fill="rgb(200,200,200)"/>
-  <text x="300" y="380" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="24" fill="rgb(100,100,100)">Deluxe Room</text>
+  <rect width="600" height="400" fill="rgb(224, 242, 254)"/>
+  <!-- Sun -->
+  <circle cx="500" cy="80" r="36" fill="rgb(253, 224, 71)"/>
+  <!-- Sea Horizon -->
+  <rect y="160" width="600" height="120" fill="rgb(56, 189, 248)"/>
+  <rect y="210" width="600" height="70" fill="rgb(14, 165, 233)"/>
+  <!-- Beach -->
+  <path d="M 0 260 Q 300 240 600 270 L 600 400 L 0 400 Z" fill="rgb(254, 243, 199)"/>
+  <!-- Resort Building Main Wing -->
+  <rect x="140" y="110" width="220" height="160" rx="8" fill="rgb(255, 255, 255)"/>
+  <!-- Hotel Roof Accent -->
+  <rect x="130" y="100" width="240" height="16" rx="4" fill="rgb(37, 99, 235)"/>
+  <!-- Windows / Balconies -->
+  <rect x="160" y="130" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="210" y="130" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="260" y="130" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="310" y="130" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+
+  <rect x="160" y="175" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="210" y="175" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="260" y="175" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="310" y="175" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+
+  <rect x="160" y="220" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="210" y="220" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="260" y="220" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+  <rect x="310" y="220" width="36" height="28" rx="2" fill="rgb(186, 230, 253)"/>
+
+  <!-- Balcony railings -->
+  <rect x="156" y="152" width="44" height="6" fill="rgb(203, 213, 225)"/>
+  <rect x="206" y="152" width="44" height="6" fill="rgb(203, 213, 225)"/>
+  <rect x="256" y="152" width="44" height="6" fill="rgb(203, 213, 225)"/>
+  <rect x="306" y="152" width="44" height="6" fill="rgb(203, 213, 225)"/>
+
+  <!-- Pool -->
+  <ellipse cx="250" cy="320" rx="110" ry="35" fill="rgb(37, 99, 235)"/>
+  <ellipse cx="250" cy="320" rx="95" ry="26" fill="rgb(96, 165, 250)"/>
+
+  <!-- Palm Tree Left -->
+  <path d="M 60 360 Q 75 250 85 170" stroke="rgb(180, 83, 9)" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M 85 170 Q 30 140 20 180" stroke="rgb(34, 197, 94)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 85 170 Q 60 110 50 140" stroke="rgb(22, 163, 74)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 85 170 Q 120 110 130 140" stroke="rgb(34, 197, 94)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 85 170 Q 140 160 130 190" stroke="rgb(22, 163, 74)" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Palm Tree Right -->
+  <path d="M 520 370 Q 505 260 490 180" stroke="rgb(180, 83, 9)" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M 490 180 Q 440 150 430 190" stroke="rgb(34, 197, 94)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 490 180 Q 470 120 460 150" stroke="rgb(22, 163, 74)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 490 180 Q 530 120 540 150" stroke="rgb(34, 197, 94)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 490 180 Q 550 170 540 200" stroke="rgb(22, 163, 74)" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Sun Loungers -->
+  <rect x="390" y="310" width="35" height="12" rx="3" fill="rgb(239, 68, 68)"/>
+  <rect x="435" y="315" width="35" height="12" rx="3" fill="rgb(239, 68, 68)"/>
+  <circle cx="410" cy="300" r="14" fill="rgb(255, 255, 255)"/>
+
+  <!-- Label Badge -->
+  <rect x="20" y="20" width="220" height="34" rx="17" fill="rgb(37, 99, 235)"/>
+  <text x="130" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="14" fill="rgb(255, 255, 255)">DELUXE OCEAN RESORT</text>
 </svg>

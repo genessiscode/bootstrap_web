@@ -49,7 +49,7 @@ const { chromium } = require('playwright');
           clientHeight: el.clientHeight
         });
       }
-      el.children.forEach(checkEl);
+      Array.from(el.children).forEach(checkEl);
     };
     checkEl(document.body);
     return problematic;

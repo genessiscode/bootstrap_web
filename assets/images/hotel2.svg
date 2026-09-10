@@ -1,8 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
-  <rect width="600" height="400" fill="rgb(240,240,240)"/>
-  <rect x="60" y="50" width="480" height="320" rx="20" fill="rgb(255,255,255)"/>
-  <rect x="120" y="100" width="360" height="260" rx="15" fill="rgb(230,230,230)"/>
-  <rect x="180" y="140" width="240" height="200" rx="10" fill="rgb(220,220,220)"/>
-  <text x="300" y="380" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="24" fill="rgb(100,100,100)">Suite Room</text>
+  <!-- Sky -->
+  <rect width="600" height="400" fill="rgb(240, 253, 244)"/>
+  <!-- Mountain Layers -->
+  <path d="M 0 180 Q 150 110 320 160 T 600 130 L 600 400 L 0 400 Z" fill="rgb(187, 247, 208)"/>
+  <path d="M 0 220 Q 200 160 420 210 T 600 190 L 600 400 L 0 400 Z" fill="rgb(134, 239, 172)"/>
+  <path d="M 0 270 Q 280 220 600 250 L 600 400 L 0 400 Z" fill="rgb(74, 222, 128)"/>
+  <path d="M 0 320 Q 300 290 600 320 L 600 400 L 0 400 Z" fill="rgb(34, 197, 94)"/>
+
+  <!-- Heritage Manor House -->
+  <polygon points="200,160 300,90 400,160" fill="rgb(185, 28, 28)"/>
+  <polygon points="120,180 200,120 280,180" fill="rgb(153, 27, 27)"/>
+  <polygon points="320,180 400,120 480,180" fill="rgb(153, 27, 27)"/>
+  <rect x="140" y="180" width="320" height="110" rx="4" fill="rgb(255, 255, 255)"/>
+
+  <!-- Timber Accents / Tudor Style -->
+  <line x1="140" y1="180" x2="460" y2="180" stroke="rgb(69, 26, 3)" stroke-width="4"/>
+  <line x1="140" y1="230" x2="460" y2="230" stroke="rgb(69, 26, 3)" stroke-width="4"/>
+  <line x1="220" y1="180" x2="220" y2="290" stroke="rgb(69, 26, 3)" stroke-width="4"/>
+  <line x1="380" y1="180" x2="380" y2="290" stroke="rgb(69, 26, 3)" stroke-width="4"/>
+
+  <!-- Windows -->
+  <rect x="160" y="195" width="40" height="25" rx="3" fill="rgb(254, 240, 138)"/>
+  <rect x="240" y="195" width="40" height="25" rx="3" fill="rgb(254, 240, 138)"/>
+  <rect x="320" y="195" width="40" height="25" rx="3" fill="rgb(254, 240, 138)"/>
+  <rect x="400" y="195" width="40" height="25" rx="3" fill="rgb(254, 240, 138)"/>
+
+  <rect x="160" y="245" width="40" height="30" rx="3" fill="rgb(254, 240, 138)"/>
+  <rect x="275" y="240" width="50" height="50" rx="4" fill="rgb(120, 53, 15)"/>
+  <rect x="400" y="245" width="40" height="30" rx="3" fill="rgb(254, 240, 138)"/>
+
+  <!-- Chimney -->
+  <rect x="350" y="80" width="24" height="40" fill="rgb(153, 27, 27)"/>
+
+  <!-- Pine / Cypress Trees -->
+  <polygon points="80,290 60,360 100,360" fill="rgb(21, 128, 61)"/>
+  <polygon points="80,250 65,310 95,310" fill="rgb(22, 163, 74)"/>
+  <polygon points="520,290 500,360 540,360" fill="rgb(21, 128, 61)"/>
+  <polygon points="520,250 505,310 535,310" fill="rgb(22, 163, 74)"/>
+
+  <!-- Tea Bushes in Foreground -->
+  <circle cx="120" cy="360" r="30" fill="rgb(22, 101, 52)"/>
+  <circle cx="170" cy="370" r="28" fill="rgb(21, 128, 61)"/>
+  <circle cx="230" cy="365" r="32" fill="rgb(22, 101, 52)"/>
+  <circle cx="370" cy="365" r="32" fill="rgb(22, 101, 52)"/>
+  <circle cx="430" cy="370" r="28" fill="rgb(21, 128, 61)"/>
+  <circle cx="480" cy="360" r="30" fill="rgb(22, 101, 52)"/>
+
+  <!-- Label Badge -->
+  <rect x="20" y="20" width="240" height="34" rx="17" fill="rgb(16, 185, 129)"/>
+  <text x="140" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="14" fill="rgb(255, 255, 255)">TEA ESTATE HERITAGE VILLA</text>
 </svg>

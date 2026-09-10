@@ -1,4 +1,4 @@
-// ===== TravelEase Bootstrap 5 Website - Custom Scripts =====
+// ===== TravelPearl Bootstrap 5 Website - Custom Scripts =====
 // Beginner-friendly scripts with no emojis, no forbidden patterns
 // ===============================================================
 
@@ -11,9 +11,12 @@
   // Initialize booking form validation
   initBookingForm();
 
+  // Initialize contact inquiry form validation
+  initContactForm();
+
   // Initialize page on DOM ready
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('TravelEase website initialized');
+    console.log('TravelPearl website initialized');
   });
 
 })();
@@ -137,15 +140,85 @@ function initBookingForm() {
   });
 }
 
+// ===== Contact Inquiry Form Validation =====
+function initContactForm() {
+  const form = document.getElementById('contactInquiryForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = form.querySelector('#contactName');
+    const email = form.querySelector('#contactEmail');
+    const phone = form.querySelector('#contactPhone');
+    const category = form.querySelector('#contactCategory');
+    const message = form.querySelector('#contactMessage');
+    const consent = form.querySelector('#contactConsent');
+    const successAlert = document.getElementById('contactSuccessAlert');
+
+    let isValid = true;
+
+    [name, email, phone, category, message, consent].forEach(function(field) {
+      if (field) field.classList.remove('is-invalid');
+    });
+
+    if (name && !name.value.trim()) {
+      name.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (email && (!email.value.trim() || !isValidEmail(email.value.trim()))) {
+      email.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (phone && !phone.value.trim()) {
+      phone.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (category && !category.value) {
+      category.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (message && !message.value.trim()) {
+      message.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (consent && !consent.checked) {
+      consent.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (isValid) {
+      if (successAlert) {
+        successAlert.classList.remove('d-none');
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = 'Inquiry Sent Successfully!';
+        submitBtn.classList.replace('btn-primary', 'btn-success');
+        submitBtn.disabled = true;
+      }
+      form.reset();
+    }
+  });
+}
+
 // ===== Smooth Scroll for anchor links =====
 document.addEventListener('click', function(event) {
-  if (event.target.matches('a[href^="#"]') && !event.target.classList.contains('btn')) {
-    event.preventDefault();
-    const targetId = event.target.getAttribute('href');
-    if (targetId === '#') return;
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+  const link = event.target.closest('a[href^="#"]');
+  if (link && !link.classList.contains('btn') && !link.hasAttribute('data-bs-toggle')) {
+    const targetId = link.getAttribute('href');
+    if (targetId && targetId !== '#' && targetId.length > 1) {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        event.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 });
