@@ -1,0 +1,92 @@
+/* ========================================================================== */
+/* SIZE FIXES FOR CAROUSEL AND SEARCH BAR */
+/* ========================================================================== */
+
+/* Reduce carousel image heights */
+.carousel-image {
+  height: 160px !important;
+  max-height: 160px;
+}
+
+/* Smaller carousel buttons */
+.carousel-btn {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+}
+
+.carousel-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Reduce carousel container padding */
+.image-carousel {
+  padding-top: 1.5rem !important;
+}
+
+.carousel-viewport {
+  padding-bottom: 1.5rem !important;
+}
+
+/* Smaller search bar and inputs */
+.hero-section .input-group {
+  padding: 4px !important;
+  max-width: 100%;
+}
+
+.hero-section .input-group-text {
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+}
+
+.hero-section .form-control {
+  padding: 0.5rem 0.65rem !important;
+  font-size: 0.875rem !important;
+}
+
+.hero-section .btn {
+  padding: 0.5rem 1.2rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Reduce hero section bottom padding */
+.hero-section {
+  padding-bottom: 2.5rem !important;
+}
+
+/* Reduce lead text size */
+.hero-section .lead {
+  font-size: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Trust badges smaller */
+.trust-badge {
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.75rem !important;
+}
+
+/* Smaller feature icons in trust badges */
+.trust-badge .feature-icon-sm {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 180px !important;
+  }
+  
+  .hero-section .input-group {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .hero-section .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

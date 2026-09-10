@@ -1,0 +1,292 @@
+/* ========================================================================== */
+/* COMPREHENSIVE FIXES: Search Bar Size + Button/Badge Depth & Rounding */
+/* ========================================================================== */
+
+/* ============================ */
+/* FIX 1: PROPERLY SIZE SEARCH BAR */
+/* ============================ */
+
+/* Reduce hero section search bar to proper size */
+.hero-section .input-group {
+  border-radius: 50px !important;
+  border: 1px solid var(--tp-hairline) !important;
+  padding: 3px !important;
+  max-width: 100%;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.04), 0 4px 12px rgba(13, 37, 61, 0.03) !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hero-section .input-group-text {
+  padding: 0.35rem 0.65rem !important;
+  font-size: 0.75rem !important;
+  background: transparent !important;
+  border: none !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section .search-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.hero-section .form-control {
+  padding: 0.35rem 0.5rem !important;
+  font-size: 0.8125rem !important;
+  border: none !important;
+  height: 100% !important;
+  line-height: 1.3;
+}
+
+.hero-section .form-control::placeholder {
+  font-size: 0.75rem !important;
+}
+
+.hero-section .form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.hero-section .btn-action-primary,
+.hero-section .btn {
+  padding: 0.35rem 1rem !important;
+  font-size: 0.8125rem !important;
+  height: 34px !important;
+  border-radius: 50px !important;
+  margin: 0 !important;
+  line-height: 1.3;
+}
+
+/* ============================ */
+/* FIX 2: ADD DEPTH TO ALL BUTTONS */
+/* ============================ */
+
+/* Primary Button - Enhanced depth */
+.btn-primary,
+.btn.btn-primary,
+button.btn-primary,
+a.btn-primary,
+.btn-action-primary {
+  background-color: var(--tp-primary) !important;
+  border-color: var(--tp-primary) !important;
+  color: var(--tp-on-primary) !important;
+  box-shadow: 0 2px 8px rgba(83, 58, 253, 0.25), 0 4px 16px rgba(83, 58, 253, 0.12) !important;
+  border-radius: 50px !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-action-primary:hover {
+  background-color: var(--tp-primary-deep) !important;
+  border-color: var(--tp-primary-deep) !important;
+  box-shadow: 0 4px 12px rgba(83, 58, 253, 0.35), 0 8px 24px rgba(83, 58, 253, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-primary:active,
+.btn-action-primary:active {
+  background-color: var(--tp-primary-press) !important;
+  box-shadow: 0 1px 3px rgba(83, 58, 253, 0.2) !important;
+  transform: translateY(0) !important;
+}
+
+/* Secondary Button - Depth */
+.btn-secondary,
+.btn-action-secondary {
+  background-color: var(--tp-canvas) !important;
+  border: 1px solid var(--tp-hairline) !important;
+  color: var(--tp-ink) !important;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.06), 0 2px 8px rgba(13, 37, 61, 0.04) !important;
+  border-radius: 50px !important;
+}
+
+.btn-secondary:hover,
+.btn-action-secondary:hover {
+  background-color: var(--tp-canvas-soft) !important;
+  box-shadow: 0 2px 6px rgba(13, 37, 61, 0.08), 0 4px 12px rgba(13, 37, 61, 0.06) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Success Button - Depth */
+.btn-success {
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25), 0 4px 16px rgba(16, 185, 129, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.btn-success:hover {
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35), 0 8px 24px rgba(16, 185, 129, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Danger Button - Depth */
+.btn-danger {
+  box-shadow: 0 2px 8px rgba(234, 34, 97, 0.25), 0 4px 16px rgba(234, 34, 97, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.btn-danger:hover {
+  box-shadow: 0 4px 12px rgba(234, 34, 97, 0.35), 0 8px 24px rgba(234, 34, 97, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Warning Button - Depth */
+.btn-warning {
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25), 0 4px 16px rgba(245, 158, 11, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.btn-warning:hover {
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35), 0 8px 24px rgba(245, 158, 11, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Dark Button - Depth */
+.btn-dark {
+  box-shadow: 0 2px 8px rgba(28, 30, 84, 0.25), 0 4px 16px rgba(28, 30, 84, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.btn-dark:hover {
+  box-shadow: 0 4px 12px rgba(28, 30, 84, 0.35), 0 8px 24px rgba(28, 30, 84, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Outline Buttons - Depth */
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger {
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.06), 0 2px 8px rgba(13, 37, 61, 0.04) !important;
+  border-radius: 50px !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-success:hover,
+.btn-outline-danger:hover {
+  box-shadow: 0 2px 6px rgba(13, 37, 61, 0.08), 0 4px 12px rgba(13, 37, 61, 0.06) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Small Button Variants - Maintain depth */
+.btn-sm {
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.06), 0 2px 6px rgba(13, 37, 61, 0.04) !important;
+  border-radius: 50px !important;
+}
+
+.btn-sm:hover {
+  box-shadow: 0 2px 4px rgba(13, 37, 61, 0.08), 0 3px 8px rgba(13, 37, 61, 0.06) !important;
+}
+
+/* ============================ */
+/* FIX 3: ADD DEPTH TO ALL BADGES */
+/* ============================ */
+
+.badge {
+  border-radius: 50px !important;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.06), 0 2px 6px rgba(13, 37, 61, 0.04) !important;
+  transition: all 0.15s ease;
+}
+
+.badge:hover {
+  box-shadow: 0 2px 4px rgba(13, 37, 61, 0.08), 0 3px 8px rgba(13, 37, 61, 0.06) !important;
+  transform: translateY(-1px);
+}
+
+.badge-soft-primary {
+  background-color: var(--tp-primary-bg-subdued) !important;
+  color: var(--tp-primary-deep) !important;
+  box-shadow: 0 1px 3px rgba(83, 58, 253, 0.1), 0 2px 6px rgba(83, 58, 253, 0.06) !important;
+  border-radius: 50px !important;
+}
+
+.badge-subtle-neutral {
+  background-color: var(--tp-canvas-soft) !important;
+  color: var(--tp-ink-secondary) !important;
+  border: 1px solid var(--tp-hairline) !important;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.04), 0 2px 6px rgba(13, 37, 61, 0.03) !important;
+  border-radius: 50px !important;
+}
+
+/* Bootstrap Badge Colors - Enhanced depth */
+.badge.bg-primary {
+  background-color: var(--tp-primary) !important;
+  box-shadow: 0 1px 3px rgba(83, 58, 253, 0.2), 0 2px 6px rgba(83, 58, 253, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.badge.bg-success {
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.2), 0 2px 6px rgba(16, 185, 129, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.badge.bg-danger {
+  box-shadow: 0 1px 3px rgba(234, 34, 97, 0.2), 0 2px 6px rgba(234, 34, 97, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.badge.bg-warning {
+  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.2), 0 2px 6px rgba(245, 158, 11, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+.badge.bg-dark {
+  box-shadow: 0 1px 3px rgba(28, 30, 84, 0.2), 0 2px 6px rgba(28, 30, 84, 0.12) !important;
+  border-radius: 50px !important;
+}
+
+/* ============================ */
+/* FIX 4: ENSURE CARD DEPTH IS CONSISTENT */
+/* ============================ */
+
+.card,
+.card-surface {
+  border-radius: 50px !important;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.04), 0 6px 16px rgba(13, 37, 61, 0.03) !important;
+}
+
+.card:hover,
+.card-surface:hover {
+  box-shadow: 0 2px 6px rgba(13, 37, 61, 0.06), 0 10px 24px rgba(13, 37, 61, 0.05) !important;
+  transform: translateY(-2px);
+}
+
+.card-feature {
+  border-radius: 20px !important;
+  box-shadow: 0 2px 8px rgba(13, 37, 61, 0.06), 0 8px 20px rgba(13, 37, 61, 0.04) !important;
+}
+
+.card-feature:hover {
+  box-shadow: 0 4px 12px rgba(13, 37, 61, 0.08), 0 12px 28px rgba(13, 37, 61, 0.06) !important;
+  transform: translateY(-2px);
+}
+
+/* ============================ */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================ */
+
+@media (max-width: 768px) {
+  .hero-section .input-group {
+    height: auto !important;
+    flex-wrap: wrap;
+    padding: 6px !important;
+  }
+
+  .hero-section .form-control {
+    width: 100%;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+    margin-top: 0.5rem !important;
+    height: 38px !important;
+  }
+}
