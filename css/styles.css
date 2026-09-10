@@ -185,17 +185,22 @@ a.btn-primary:active {
 }
 
 /* Bootstrap Light Button */
-.btn-light {
+.btn-light,
+.btn-action-light {
   background-color: var(--tp-canvas) !important;
-  border-color: var(--tp-hairline) !important;
+  border: 1px solid var(--tp-hairline) !important;
   color: var(--tp-ink) !important;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.06), 0 2px 8px rgba(13, 37, 61, 0.04) !important;
 }
 
 .btn-light:hover,
-.btn-light:focus {
+.btn-light:focus,
+.btn-action-light:hover {
   background-color: var(--tp-canvas-soft) !important;
-  border-color: var(--tp-ink-mute) !important;
-  color: var(--tp-ink) !important;
+  border-color: var(--tp-primary) !important;
+  color: var(--tp-primary) !important;
+  box-shadow: 0 2px 6px rgba(13, 37, 61, 0.08), 0 4px 12px rgba(13, 37, 61, 0.06) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* Bootstrap Dark Button */
@@ -284,15 +289,32 @@ button.btn-action-primary:hover {
   letter-spacing: 0.01em;
 }
 
+/* Badge styling - consistent padding and styling */
+.badge,
+.badge-soft-primary,
+.badge-subtle-neutral {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.025em !important;
+  text-transform: uppercase !important;
+}
+
 .badge-soft-primary {
   background-color: var(--tp-primary-bg-subdued) !important;
   color: var(--tp-primary-deep) !important;
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 50px !important;
 }
 
 .badge-subtle-neutral {
   background-color: var(--tp-canvas-soft) !important;
   color: var(--tp-ink-secondary) !important;
   border: 1px solid var(--tp-hairline) !important;
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 50px !important;
 }
 
 /* Bootstrap Badge Colors */
@@ -1488,4 +1510,182 @@ a.btn-primary,
   .hero-section .lead {
     font-size: 1rem !important;
   }
+}
+/* ========================================================================== */
+/* COMPREHENSIVE BADGE AND BUTTON STYLING FIXES */
+/* ========================================================================== */
+
+/* ============================ */
+/* FIX ALL BADGES - Consistent Styling */
+/* ============================ */
+
+/* Base badge styling - applies to ALL badges */
+.badge,
+.badge-soft-primary,
+.badge-subtle-neutral,
+.badge.bg-primary,
+.badge.bg-secondary,
+.badge.bg-success,
+.badge.bg-danger,
+.badge.bg-warning,
+.badge.bg-info,
+.badge.bg-light,
+.badge.bg-dark {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.025em !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 50px !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  transition: none !important;
+  vertical-align: middle !important;
+}
+
+/* Specific badge color overrides */
+.badge-soft-primary {
+  background-color: var(--tp-primary-bg-subdued) !important;
+  color: var(--tp-primary-deep) !important;
+  border: none !important;
+}
+
+.badge-subtle-neutral {
+  background-color: var(--tp-canvas-soft) !important;
+  color: var(--tp-ink-secondary) !important;
+  border: 1px solid var(--tp-hairline) !important;
+}
+
+/* Remove hover effects from badges */
+.badge:hover,
+.badge-soft-primary:hover,
+.badge-subtle-neutral:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* ============================ */
+/* FIX ALL BUTTONS - Consistent Styling */
+/* ============================ */
+
+/* Base button styling - proper centering and depth */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info,
+.btn-light,
+.btn-dark,
+.btn-action-primary,
+.btn-action-secondary,
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-sm,
+.btn-lg {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  transition: all 0.15s ease !important;
+  text-decoration: none !important;
+}
+
+/* Ensure btn-action-primary matches other primary buttons */
+.btn-action-primary,
+a.btn-action-primary,
+button.btn-action-primary,
+.btn-action-primary.w-100 {
+  background-color: var(--tp-primary) !important;
+  border-color: var(--tp-primary) !important;
+  color: var(--tp-on-primary) !important;
+  box-shadow: 0 2px 8px rgba(83, 58, 253, 0.25), 0 4px 16px rgba(83, 58, 253, 0.12) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-size: 0.9375rem !important;
+}
+
+.btn-action-primary:hover,
+a.btn-action-primary:hover,
+button.btn-action-primary:hover {
+  background-color: var(--tp-primary-deep) !important;
+  border-color: var(--tp-primary-deep) !important;
+  color: var(--tp-on-primary) !important;
+  box-shadow: 0 4px 12px rgba(83, 58, 253, 0.35), 0 8px 24px rgba(83, 58, 253, 0.15) !important;
+  transform: translateY(-1px) !important;
+  text-decoration: none !important;
+}
+
+.btn-action-primary:active,
+a.btn-action-primary:active,
+button.btn-action-primary:active {
+  background-color: var(--tp-primary-press) !important;
+  box-shadow: 0 1px 3px rgba(83, 58, 253, 0.2) !important;
+  transform: translateY(0) !important;
+}
+
+/* Ensure btn-action-secondary matches other secondary buttons */
+.btn-action-secondary,
+a.btn-action-secondary,
+button.btn-action-secondary {
+  background-color: var(--tp-canvas) !important;
+  border: 1px solid var(--tp-hairline) !important;
+  color: var(--tp-ink) !important;
+  box-shadow: 0 1px 3px rgba(13, 37, 61, 0.06), 0 2px 8px rgba(13, 37, 61, 0.04) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-size: 0.9375rem !important;
+}
+
+.btn-action-secondary:hover,
+a.btn-action-secondary:hover,
+button.btn-action-secondary:hover {
+  background-color: var(--tp-canvas-soft) !important;
+  box-shadow: 0 2px 6px rgba(13, 37, 61, 0.08), 0 4px 12px rgba(13, 37, 61, 0.06) !important;
+  transform: translateY(-1px) !important;
+  text-decoration: none !important;
+}
+
+/* Button sizes */
+.btn-lg {
+  padding: 0.6rem 1.75rem !important;
+  font-size: 1rem !important;
+}
+
+.btn-sm {
+  padding: 0.35rem 1rem !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Full width buttons */
+.btn.w-100,
+.btn-action-primary.w-100,
+.btn-action-secondary.w-100 {
+  width: 100% !important;
+  justify-content: center !important;
+}
+
+/* Button text - ensure no underline on links */
+a.btn,
+a.btn-primary,
+a.btn-secondary,
+a.btn-action-primary,
+a.btn-action-secondary {
+  text-decoration: none !important;
+}
+
+a.btn:hover,
+a.btn-primary:hover,
+a.btn-secondary:hover,
+a.btn-action-primary:hover,
+a.btn-action-secondary:hover {
+  text-decoration: none !important;
 }

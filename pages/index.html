@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TravelPearl - Premier Sri Lanka Hotel &amp; Resort Booking</title>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Member 1: Fixed Navigation Bar ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main Navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="text-white fw-bold">TravelPearl</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="index.html" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home Overview</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#features">Why Choose Us</a></li>
+              <li><a class="dropdown-item" href="#rooms">Accommodations</a></li>
+              <li><a class="dropdown-item" href="#destinations">Destinations</a></li>
+              <li><a class="dropdown-item" href="#pricing">Rates &amp; Comparison</a></li>
+              <li><a class="dropdown-item" href="#booking">Book Now</a></li>
+              <li><a class="dropdown-item" href="#reviews">Guest Reviews</a></li>
+              <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Travel Guides</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+
+  <!-- ===== Member 1 & 5: Hero Section with Dynamic Property Carousel ===== -->
+  <header class="hero-section text-center py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+          <div class="d-inline-flex align-items-center mb-3">
+            <span class="badge-soft-primary text-uppercase">Official Sri Lanka Travel Partner</span>
+          </div>
+          <h1 class="display-4 fw-bold mb-3">Discover Premier Stays Across Sri Lanka</h1>
+          <p class="lead mb-4 text-secondary">
+            Book verified oceanfront luxury resorts, historic hill country tea estates, and heritage eco-chalets with instant confirmation and transparent partner pricing.
+          </p>
+
+          <!-- Search Bar with Input Group -->
+          <div class="input-group mb-4">
+            <span class="input-group-text">
+              <img src="../assets/icons/icon-search.png" class="search-icon me-2" alt="Search icon">
+              <span class="fw-semibold text-secondary d-none d-md-inline">Find Stay</span>
+            </span>
+            <input type="text" class="form-control" placeholder="Destination (e.g. Galle, Nuwara Eliya, Sigiriya, Kandy)..." aria-label="Destination search" id="heroDestination">
+            <input type="date" class="form-control d-none d-sm-block" aria-label="Check-in date" id="heroCheckIn">
+            <button class="btn btn-action-primary px-4" type="button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Search Deals</button>
+          </div>
+
+          <!-- Trust Badges & Highlights -->
+          <div class="d-flex justify-content-center flex-wrap gap-2 pt-2">
+            <span class="trust-badge">
+              <img src="../assets/icons/icon-check.png" class="feature-icon-sm me-2" alt="Check"> 150+ Verified Properties
+            </span>
+            <span class="trust-badge">
+              <img src="../assets/icons/icon-star.png" class="feature-icon-sm me-2" alt="Star"> 4.9/5 Guest Satisfaction
+            </span>
+            <span class="trust-badge">
+              <img src="../assets/icons/icon-price.png" class="feature-icon-sm me-2" alt="Price"> Zero Booking Fees
+            </span>
+            <span class="trust-badge">
+              <img src="../assets/icons/icon-pin.png" class="feature-icon-sm me-2" alt="Pin"> Island-wide Coverage
+            </span>
+          </div>
+
+          <!-- Multi-Image Carousel (Responsive: 1/3/4 Cards) -->
+          <div class="image-carousel">
+            <div class="carousel-container">
+              <button class="carousel-btn carousel-btn-prev" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                  <div class="carousel-card">
+                    <img src="../assets/images/beach.jpg" alt="Beach Resort" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/tea_villa.jpg" alt="Tea Estate Villa" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/rockview_chalet.jpg" alt="Rockview Chalet" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/leapord.jpg" alt="Mountain Lodge" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/umar.jpg" alt="Ocean Penthouse" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/beach.jpg" alt="Beach Resort" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/tea_villa.jpg" alt="Tea Estate Villa" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="../assets/images/rockview_chalet.jpg" alt="Rockview Chalet" class="carousel-image">
+                  </div>
+                </div>
+              </div>
+
+              <button class="carousel-btn carousel-btn-next" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Hero Section -->
+
+  <!-- ===== Member 2 & 5: Platform Features ===== -->
+  <section id="features" class="py-5 section-canvas-soft" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 id="features-heading" class="fw-bold">Why Book with TravelPearl</h2>
+        <p class="text-secondary">Tailored hospitality designed around comfort, authenticity, and peace of mind.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-feature h-100 text-center">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle-surface mb-3">
+                <img src="../assets/icons/icon-hotel.png" class="feature-icon" alt="Curated stays icon">
+              </div>
+              <h5 class="card-title fw-bold">Curated Stays</h5>
+              <p class="card-text">Every hotel and boutique villa is handpicked and inspected to meet stringent safety and cleanliness standards.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-feature h-100 text-center">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle-surface mb-3">
+                <img src="../assets/icons/icon-price.png" class="feature-icon" alt="Best price icon">
+              </div>
+              <h5 class="card-title fw-bold">Best Price Guarantee</h5>
+              <p class="card-text">Direct hotel partnerships provide competitive nightly rates with no surprise booking fees or hidden charges.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-feature h-100 text-center">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle-surface mb-3">
+                <img src="../assets/icons/icon-pin.png" class="feature-icon" alt="Island locations icon">
+              </div>
+              <h5 class="card-title fw-bold">Prime Island Locations</h5>
+              <p class="card-text">Choose properties close to key transport routes, iconic UNESCO landmarks, and pristine southern beaches.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-feature h-100 text-center">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle-surface mb-3">
+                <img src="../assets/icons/icon-check.png" class="feature-icon" alt="Instant confirmation icon">
+              </div>
+              <h5 class="card-title fw-bold">Instant Confirmation</h5>
+              <p class="card-text">Real-time reservation booking with instant digital vouchers, flexible check-in, and 24/7 travel desk support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Platform Features -->
+
+  <!-- ===== Member 2, 3, 5: Featured Accommodations Grid ===== -->
+  <section id="rooms" class="py-5 section-subtle-grey" aria-labelledby="rooms-heading">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5">
+        <div>
+          <h2 id="rooms-heading" class="fw-bold mb-1">Featured Accommodations</h2>
+          <p class="text-secondary mb-0">Explore our most popular island villas and luxury resort selections.</p>
+        </div>
+        <div class="mt-3 mt-md-0">
+          <span class="badge-subtle-neutral px-3 py-2">Updated Daily for 2026</span>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Room Card 1: Ocean Resort -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card card-surface h-100">
+            <img src="../assets/images/beach.jpg" class="card-img-top img-fluid" alt="Deluxe Ocean Resort in Galle">
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-soft-primary">Oceanfront</span>
+                <span class="d-inline-flex align-items-center text-secondary small fw-semibold">
+                  <img src="../assets/icons/icon-star.png" class="feature-icon-sm me-1" alt="Star rating"> 4.9 (142 reviews)
+                </span>
+              </div>
+              <h4 class="card-title fw-bold">Deluxe Ocean Resort</h4>
+              <p class="text-secondary small mb-2">Galle / Bentota Coastal Strip</p>
+              <p class="card-text mb-4">
+                Wake up to Indian Ocean views, a private infinity pool, sun lounger decks, and direct beach access with complimentary tropical breakfast buffet.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <span class="text-secondary small">Starting from</span>
+                  <div class="price-highlight fs-4">$180 <span class="text-secondary fs-6 fw-normal">/ night</span></div>
+                </div>
+                <span class="badge bg-success">Available</span>
+              </div>
+              <a href="#booking" class="btn btn-action-primary w-100">Book Deluxe Suite</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room Card 2: Tea Estate Heritage Villa -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card card-surface h-100">
+            <img src="../assets/images/tea_villa.jpg" class="card-img-top img-fluid" alt="Tea Estate Heritage Villa in Nuwara Eliya">
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-success">Hill Country</span>
+                <span class="d-inline-flex align-items-center text-secondary small fw-semibold">
+                  <img src="../assets/icons/icon-star.png" class="feature-icon-sm me-1" alt="Star rating"> 4.8 (98 reviews)
+                </span>
+              </div>
+              <h4 class="card-title fw-bold">Tea Estate Heritage Villa</h4>
+              <p class="text-secondary small mb-2">Nuwara Eliya High Country</p>
+              <p class="card-text mb-4">
+                Classic colonial Tudor architecture surrounded by emerald tea plantations, cozy working fireplaces, garden courtyards, and tea sommelier tours.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <span class="text-secondary small">Starting from</span>
+                  <div class="price-highlight fs-4">$140 <span class="text-secondary fs-6 fw-normal">/ night</span></div>
+                </div>
+                <span class="badge bg-warning text-dark">Popular</span>
+              </div>
+              <a href="#booking" class="btn btn-action-primary w-100">Reserve Villa</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room Card 3: Sigiriya Rockview Chalet -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card card-surface h-100">
+            <img src="../assets/images/rockview_chalet.jpg" class="card-img-top img-fluid" alt="Sigiriya Rockview Chalet in Cultural Triangle">
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-subtle-neutral">Eco Luxury</span>
+                <span class="d-inline-flex align-items-center text-secondary small fw-semibold">
+                  <img src="../assets/icons/icon-star.png" class="feature-icon-sm me-1" alt="Star rating"> 4.9 (115 reviews)
+                </span>
+              </div>
+              <h4 class="card-title fw-bold">Sigiriya Rockview Chalet</h4>
+              <p class="text-secondary small mb-2">Sigiriya Cultural Triangle</p>
+              <p class="card-text mb-4">
+                Stilt-supported timber eco-chalet overlooking lotus waterways and the ancient Sigiriya Lion Rock Fortress, featuring open-air dining and spa therapies.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <span class="text-secondary small">Starting from</span>
+                  <div class="price-highlight fs-4">$110 <span class="text-secondary fs-6 fw-normal">/ night</span></div>
+                </div>
+                <span class="badge bg-danger">2 Left</span>
+              </div>
+              <a href="#booking" class="btn btn-action-primary w-100">Inquire Chalet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Featured Accommodations -->
+
+  <!-- ===== Member 1 & 2: Top Sri Lanka Destinations ===== -->
+  <section id="destinations" class="py-5 section-canvas-soft" aria-labelledby="destinations-heading">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 id="destinations-heading" class="fw-bold">Explore Island Highlights</h2>
+        <p class="text-secondary">Discover unique regional climates, historic monuments, and coastal escapes.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Destination 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-surface h-100 p-3">
+            <div class="card-body">
+              <span class="badge-soft-primary mb-2">Southern Coast</span>
+              <h5 class="card-title fw-bold">Galle &amp; Mirissa</h5>
+              <p class="card-text small">Historic 17th-century Dutch Fort, whale watching tours, golden sand beaches, and vibrant seaside dining.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li><img src="../assets/icons/icon-pin.png" class="feature-icon-sm me-1" alt="Location"> 115 km from Colombo</li>
+                <li><img src="../assets/icons/icon-hotel.png" class="feature-icon-sm me-1" alt="Stays"> 42 Verified Resorts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-surface h-100 p-3">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Central Highlands</span>
+              <h5 class="card-title fw-bold">Nuwara Eliya &amp; Ella</h5>
+              <p class="card-text small">Misty mountains, world-famous train viaducts, tea factory tastings, cool weather, and scenic hiking trails.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li><img src="../assets/icons/icon-pin.png" class="feature-icon-sm me-1" alt="Location"> 170 km from Colombo</li>
+                <li><img src="../assets/icons/icon-hotel.png" class="feature-icon-sm me-1" alt="Stays"> 38 Heritage Villas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-surface h-100 p-3">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">Cultural Triangle</span>
+              <h5 class="card-title fw-bold">Sigiriya &amp; Dambulla</h5>
+              <p class="card-text small">Ancient royal citadel rock fortress, cave temples with historic frescoes, wild elephant safaris, and lotus lakes.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li><img src="../assets/icons/icon-pin.png" class="feature-icon-sm me-1" alt="Location"> 160 km from Colombo</li>
+                <li><img src="../assets/icons/icon-hotel.png" class="feature-icon-sm me-1" alt="Stays"> 29 Eco Lodges</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-surface h-100 p-3">
+            <div class="card-body">
+              <span class="badge-subtle-neutral mb-2">Sacred Hill City</span>
+              <h5 class="card-title fw-bold">Kandy &amp; Knuckles</h5>
+              <p class="card-text small">Temple of the Sacred Tooth Relic, Royal Botanical Gardens, mountain mist hiking, and traditional cultural drumming.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li><img src="../assets/icons/icon-pin.png" class="feature-icon-sm me-1" alt="Location"> 115 km from Colombo</li>
+                <li><img src="../assets/icons/icon-hotel.png" class="feature-icon-sm me-1" alt="Stays"> 35 Boutique Hotels</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Destinations -->
+
+  <!-- ===== Member 4: Room Pricing & Comparison Table ===== -->
+  <section id="pricing" class="py-5 section-subtle-grey" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 id="pricing-heading" class="fw-bold">Room Rates &amp; Specifications</h2>
+        <p class="text-secondary">Comprehensive price breakdown, standard occupancy, and included amenities.</p>
+      </div>
+
+      <!-- Responsive Table with Striped, Hover, and Bordered Utilities -->
+      <div class="card card-surface p-4">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered align-middle mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Room Package</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Inclusions</th>
+                <th scope="col">Status</th>
+                <th scope="col">Nightly Rate</th>
+                <th scope="col" class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Deluxe Ocean Suite</strong><br>
+                  <span class="text-secondary small">Code: TE-GAL-101</span>
+                </td>
+                <td>Galle Coast</td>
+                <td>2 Adults, 1 Child</td>
+                <td>Ocean balcony, Pool access, Tropical breakfast</td>
+                <td><span class="badge bg-success">Available</span></td>
+                <td class="price-highlight">$180</td>
+                <td class="text-center">
+                  <a href="#booking" class="btn btn-sm btn-outline-primary">Select</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Tea Estate Heritage Villa</strong><br>
+                  <span class="text-secondary small">Code: TE-NUW-202</span>
+                </td>
+                <td>Nuwara Eliya</td>
+                <td>4 Adults</td>
+                <td>Fireplace, High tea, Estate garden tour</td>
+                <td><span class="badge bg-success">Available</span></td>
+                <td class="price-highlight">$140</td>
+                <td class="text-center">
+                  <a href="#booking" class="btn btn-sm btn-outline-primary">Select</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Sigiriya Eco Chalet</strong><br>
+                  <span class="text-secondary small">Code: TE-SIG-303</span>
+                </td>
+                <td>Sigiriya</td>
+                <td>2 Adults</td>
+                <td>Rock view balcony, Lake access, Ayurveda spa</td>
+                <td><span class="badge bg-warning text-dark">2 Units Left</span></td>
+                <td class="price-highlight">$110</td>
+                <td class="text-center">
+                  <a href="#booking" class="btn btn-sm btn-outline-primary">Select</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Presidential Ocean Penthouse</strong><br>
+                  <span class="text-secondary small">Code: TE-COL-404</span>
+                </td>
+                <td>Colombo Marina</td>
+                <td>4 Adults, 2 Children</td>
+                <td>Private jacuzzi, Butler service, Airport chauffeur</td>
+                <td><span class="badge-subtle-neutral">Waitlist</span></td>
+                <td class="price-highlight">$350</td>
+                <td class="text-center">
+                  <a href="#booking" class="btn btn-sm btn-outline-secondary">Waitlist</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Ella Mountain Hideaway</strong><br>
+                  <span class="text-secondary small">Code: TE-ELL-505</span>
+                </td>
+                <td>Ella Gap</td>
+                <td>3 Adults</td>
+                <td>Ravana Falls view, Breakfast, Hiking escort</td>
+                <td><span class="badge bg-success">Available</span></td>
+                <td class="price-highlight">$95</td>
+                <td class="text-center">
+                  <a href="#booking" class="btn btn-sm btn-outline-primary">Select</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-3 text-secondary small">
+        * Rates are quoted in USD per room per night. Rates include government tourism levy and standard service charges.
+      </div>
+    </div>
+  </section>
+  <!-- End Room Pricing Table -->
+
+  <!-- ===== Member 3 & 5: Interactive Booking Form ===== -->
+  <section id="booking" class="py-5 section-canvas-soft" aria-labelledby="booking-heading">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <!-- Member 5: Promotional Alert Banner -->
+          <div class="alert alert-info d-flex align-items-center mb-4" role="alert">
+            <img src="../assets/icons/discount.png" class="feature-icon-sm me-3" alt="Offer icon">
+            <div>
+              <strong>Special Summer Offer 2026:</strong> Book 3 or more consecutive nights and receive complimentary private airport transfer and daily curated breakfast!
+            </div>
+          </div>
+
+          <!-- Card Container for Booking Form -->
+          <div class="card card-surface p-4 p-md-5">
+            <div class="mb-4">
+              <h2 id="booking-heading" class="fw-bold mb-1">Reserve Your Stay</h2>
+              <p class="text-secondary">Complete the booking request below to reserve your selected accommodation.</p>
+            </div>
+
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <!-- Full Name -->
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="fullName" name="fullName" placeholder="e.g. Kasun Perera" required>
+                  <div class="invalid-feedback">Please provide your full legal name.</div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="col-md-6">
+                  <label for="emailAddress" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="name@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address for confirmation.</div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="col-md-6">
+                  <label for="phoneNumber" class="form-label fw-semibold">Phone / WhatsApp <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="+94 77 123 4567" required>
+                  <div class="invalid-feedback">Please enter a valid contact phone number.</div>
+                </div>
+
+                <!-- Room Type -->
+                <div class="col-md-6">
+                  <label for="roomType" class="form-label fw-semibold">Select Accommodation <span class="text-danger">*</span></label>
+                  <select class="form-select" id="roomType" name="roomType" required>
+                    <option value="" selected disabled>Choose an accommodation package...</option>
+                    <option value="ocean">Deluxe Ocean Resort - Galle ($180 / night)</option>
+                    <option value="tea">Tea Estate Heritage Villa - Nuwara Eliya ($140 / night)</option>
+                    <option value="sigiriya">Sigiriya Rockview Chalet - Sigiriya ($110 / night)</option>
+                    <option value="penthouse">Presidential Ocean Penthouse - Colombo ($350 / night)</option>
+                    <option value="ella">Ella Mountain Hideaway - Ella ($95 / night)</option>
+                  </select>
+                  <div class="invalid-feedback">Please choose a preferred accommodation.</div>
+                </div>
+
+                <!-- Check-in Date -->
+                <div class="col-md-4">
+                  <label for="checkIn" class="form-label fw-semibold">Check-In Date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="checkIn" name="checkIn" required>
+                  <div class="invalid-feedback">Please choose a valid check-in date.</div>
+                </div>
+
+                <!-- Check-out Date -->
+                <div class="col-md-4">
+                  <label for="checkOut" class="form-label fw-semibold">Check-Out Date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="checkOut" name="checkOut" required>
+                  <div class="invalid-feedback">Check-out must be after check-in.</div>
+                </div>
+
+                <!-- Number of Guests -->
+                <div class="col-md-4">
+                  <label for="guests" class="form-label fw-semibold">Number of Guests <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="guests" name="guests" min="1" max="10" value="2" required>
+                  <div class="invalid-feedback">Please enter between 1 and 10 guests.</div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="col-12">
+                  <label for="specialRequests" class="form-label fw-semibold">Special Requests / Dietary Notes</label>
+                  <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3" placeholder="Airport pickup requirement, twin beds preference, dietary requirements..."></textarea>
+                </div>
+
+                <!-- Terms and Conditions Checkbox -->
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                    <label class="form-check-label text-secondary small" for="termsCheck">
+                      I agree to the booking policies, flexible 48-hour cancellation policy, and terms of service.
+                    </label>
+                    <div class="invalid-feedback">You must accept the terms before proceeding.</div>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 pt-3">
+                  <button type="submit" class="btn btn-action-primary btn-lg w-100">Confirm Reservation &amp; Instant Quote</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Booking Form -->
+
+  <!-- ===== Member 2: Guest Reviews & Testimonials ===== -->
+  <section id="reviews" class="py-5 section-subtle-grey" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 id="reviews-heading" class="fw-bold">Guest Experiences</h2>
+        <p class="text-secondary">Read authentic feedback from travelers who explored Sri Lanka with TravelPearl.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Review 1 -->
+        <div class="col-12 col-md-4">
+          <div class="card card-surface h-100 p-4">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+              </div>
+              <p class="card-text mb-4">
+                "Our stay at Deluxe Ocean Resort in Galle was breathtaking. The sunset over the private pool and the seamless booking process made our honeymoon completely stress-free."
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                <div>
+                  <h6 class="fw-bold mb-0">Liam &amp; Sophie M.</h6>
+                  <small class="text-secondary">United Kingdom</small>
+                </div>
+                <span class="badge bg-success">Verified Stay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="col-12 col-md-4">
+          <div class="card card-surface h-100 p-4">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+              </div>
+              <p class="card-text mb-4">
+                "The Tea Estate Heritage Villa felt like stepping back in time. Crisp mountain air, fragrant high tea, and warm hospitality by the estate staff. Highly recommended!"
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                <div>
+                  <h6 class="fw-bold mb-0">Daniel K.</h6>
+                  <small class="text-secondary">Germany</small>
+                </div>
+                <span class="badge bg-success">Verified Stay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="col-12 col-md-4">
+          <div class="card card-surface h-100 p-4">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+                <img src="../assets/icons/star.png" class="feature-icon-sm" alt="Star">
+              </div>
+              <p class="card-text mb-4">
+                "Waking up to the unobstructed silhouette of Sigiriya Lion Rock from our timber balcony was unforgettable. Clean, serene, and incredible local food."
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                <div>
+                  <h6 class="fw-bold mb-0">Amina R.</h6>
+                  <small class="text-secondary">United Arab Emirates</small>
+                </div>
+                <span class="badge bg-success">Verified Stay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonials -->
+
+  <!-- ===== Frequently Asked Questions ===== -->
+  <section id="faq" class="py-5 section-canvas-soft" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 id="faq-heading" class="fw-bold">Frequently Asked Questions</h2>
+        <p class="text-secondary">Common inquiries regarding reservations, check-in, and island transfers.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="travelFaq">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What is the cancellation policy for bookings?
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#travelFaq">
+                <div class="accordion-body">
+                  Most standard reservations enjoy free cancellation up to 48 hours prior to the scheduled check-in date. Certain peak holiday and luxury villa bookings may require a 7-day notice period.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Are airport transfers from Bandaranaike International Airport included?
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#travelFaq">
+                <div class="accordion-body">
+                  Airport transfers are complimentary for stays of 3 nights or more in select premium packages. For other reservations, private air-conditioned transport can be arranged for a modest partner surcharge.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  When is the best season to visit different regions in Sri Lanka?
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#travelFaq">
+                <div class="accordion-body">
+                  Sri Lanka enjoys dual monsoon seasons, making it a year-round destination. The south and west coasts (Galle, Bentota) and the hill country are ideal from December to April, while the east coast (Trincomalee, Arugam Bay) shines from May to September.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  What payment methods are supported?
+                </button>
+              </h3>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#travelFaq">
+                <div class="accordion-body">
+                  We accept all major credit and debit cards (Visa, MasterCard, American Express) as well as direct bank wire transfers. Final bill settlements can also be made at the hotel reception in USD or LKR.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End FAQ -->
+
+  <!-- ===== Member 1 & 5: Contact & Newsletter Section ===== -->
+  <section id="contact" class="py-5" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Col 1: Brand Info -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 id="contact-heading">TravelPearl Sri Lanka</h5>
+          <p class="small text-secondary mb-3">
+            Registered tourism accommodation and boutique villa reservation network authorized under SLTDA accreditation.
+          </p>
+          <div class="small text-secondary">
+            Licence No: SLTDA/TRA/2026/084<br>
+            Official Year 1 Semester 2 Project
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5>Quick Navigation</h5>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="index.html">Home Overview</a></li>
+            <li class="mb-2"><a href="services.html">Travel &amp; Tour Services</a></li>
+            <li class="mb-2"><a href="about.html">About TravelPearl</a></li>
+            <li class="mb-2"><a href="blogs.html">Island Travel Guides</a></li>
+            <li class="mb-2"><a href="blog_read.html">Featured Heritage Article</a></li>
+            <li class="mb-2"><a href="contact.html">Customer Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Details -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5>Headquarters &amp; Support</h5>
+          <address class="small text-secondary mb-0">
+            <strong>TravelPearl Island Centre</strong><br>
+            45 Janadhipathi Mawatha, Colombo 01<br>
+            Western Province, Sri Lanka<br><br>
+            <strong>Phone:</strong> +94 11 234 5678<br>
+            <strong>WhatsApp:</strong> +94 77 987 6543<br>
+            <strong>Email:</strong> reservations@travelpearl.lk
+          </address>
+        </div>
+
+        <!-- Col 4: Newsletter Subscription -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5>Special Deals Newsletter</h5>
+          <p class="small text-secondary mb-3">
+            Subscribe to receive exclusive seasonal discounts, promotional voucher codes, and Sri Lanka holiday tips.
+          </p>
+
+          <!-- Alert Containers -->
+          <div id="successAlert" class="alert alert-success d-none mb-3" role="alert">
+            <span class="alert-text">Thanks for subscribing! Check your inbox for deals.</span>
+          </div>
+          <div id="errorAlert" class="alert alert-danger d-none mb-3" role="alert">
+            <span class="alert-text">Please enter a valid email address.</span>
+          </div>
+
+          <form id="newsletterForm" novalidate>
+            <div class="mb-2">
+              <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required>
+            </div>
+            <button type="submit" class="btn btn-action-primary w-100">Subscribe for Deals</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- ===== Footer ===== -->
+  <footer class="py-3 text-center">
+    <div class="container">
+      <small>&copy; 2026 TravelPearl. Group Project ETF Year 1 Semester 2. Built with Bootstrap 5. All rights reserved.</small>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../scripts/scripts.js"></script>
+</body>
+</html>
