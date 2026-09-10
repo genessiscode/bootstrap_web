@@ -1,211 +1,263 @@
-// ===== TravelPearl Bootstrap 5 Website - Custom Scripts =====
-// Beginner-friendly scripts with no emojis, no forbidden patterns
-// ===============================================================
+/**
+ * TravelPearl - Interactive Scripts
+ * Handles form validation, carousel, smooth scroll, and booking logic
+ */
 
-(() => {
+// ===== Form Validation (Bootstrap 5 native) =====
+(function initFormValidation() {
   'use strict';
-
-  // Initialize newsletter form validation
-  initNewsletterForm();
-
-  // Initialize booking form validation
-  initBookingForm();
-
-  // Initialize contact inquiry form validation
-  initContactForm();
-
-  // Initialize page on DOM ready
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('TravelPearl website initialized');
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
   });
-
 })();
 
-// ===== Newsletter Form Validation =====
-function initNewsletterForm() {
-  const form = document.getElementById('newsletterForm');
-  if (!form) return;
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent actual submission for demo
-
-    const emailInput = form.querySelector('input[type="email"]');
-    if (!emailInput) return;
-
-    const emailValue = emailInput.value.trim();
-
-    // Hide any previous alerts
-    const successAlert = document.getElementById('successAlert');
-    const errorAlert = document.getElementById('errorAlert');
-    if (successAlert) successAlert.classList.add('d-none');
-    if (errorAlert) errorAlert.classList.add('d-none');
-
-    // Validate email is not empty
-    if (!emailValue) {
-      showAlert(errorAlert, 'Please enter your email address', 'danger');
-      emailInput.focus();
-      return;
-    }
-
-    // Validate email format
-    if (!isValidEmail(emailValue)) {
-      showAlert(errorAlert, 'Please enter a valid email address', 'danger');
-      emailInput.focus();
-      return;
-    }
-
-    // Show success and clear form
-    showAlert(successAlert, 'Thanks for subscribing! Check your inbox for deals.', 'success');
-    form.reset();
-  });
-}
-
-// ===== Email Validation Helper =====
-function isValidEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
-
-// ===== Show Alert =====
-function showAlert(alertElement, message, type) {
-  if (!alertElement) return;
-  alertElement.querySelector('.alert-text')?.setAttribute('data-message', message);
-  alertElement.removeAttribute('data-type');
-  alertElement.setAttribute('data-type', type);
-  alertElement.classList.remove('d-none');
-  alertElement.classList.add('show');
-}
-
-// ===== Booking Form Validation =====
-function initBookingForm() {
-  const form = document.getElementById('bookingForm');
-  if (!form) return;
-
-  form.addEventListener('submit', function(event) {
+// ===== Booking Form Submission (if exists) =====
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+  bookingForm.addEventListener('submit', function(event) {
     event.preventDefault();
-
-    const checkIn = form.querySelector('#checkIn');
-    const checkOut = form.querySelector('#checkOut');
-    const roomType = form.querySelector('#roomType');
-    const guests = form.querySelector('#guests');
-
-    let isValid = true;
-
-    // Reset previous validation states
-    [checkIn, checkOut, roomType, guests].forEach(function(field) {
-      field.classList.remove('is-invalid');
-    });
-
-    // Validate check-in date
-    if (!checkIn.value) {
-      checkIn.classList.add('is-invalid');
-      isValid = false;
-    }
-
-    // Validate check-out date
-    if (!checkOut.value) {
-      checkOut.classList.add('is-invalid');
-      isValid = false;
-    }
-
-    // Validate check-out is after check-in
-    if (checkIn.value && checkOut.value && new Date(checkOut.value) <= new Date(checkIn.value)) {
-      checkOut.classList.add('is-invalid');
-      isValid = false;
-    }
-
-    // Validate room type
-    if (!roomType.value) {
-      roomType.classList.add('is-invalid');
-      isValid = false;
-    }
-
-    // Validate guests
-    if (!guests.value || guests.value < 1) {
-      guests.classList.add('is-invalid');
-      isValid = false;
-    }
-
-    if (isValid) {
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Booking...';
-      btn.disabled = true;
-
-      setTimeout(function() {
-        btn.textContent = 'Booked!';
-        btn.classList.replace('btn-primary', 'btn-success');
-      }, 800);
+    
+    if (bookingForm.checkValidity()) {
+      const formData = new FormData(bookingForm);
+      const bookingData = {};
+      
+      formData.forEach((value, key) => {
+        bookingData[key] = value;
+      });
+      
+      console.log('Booking submitted:', bookingData);
+      
+      // Show success message
+      const alertDiv = document.createElement('div');
+      alertDiv.className = 'alert alert-success alert-dismissible fade show mt-4';
+      alertDiv.role = 'alert';
+      alertDiv.innerHTML = `
+        <strong>Booking Request Received!</strong> We'll confirm your reservation within 24 hours.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      `;
+      
+      bookingForm.insertAdjacentElement('afterend', alertDiv);
+      bookingForm.reset();
+      bookingForm.classList.remove('was-validated');
+      
+      // Auto-remove alert after 5 seconds
+      setTimeout(() => {
+        alertDiv.remove();
+      }, 5000);
+    } else {
+      bookingForm.classList.add('was-validated');
     }
   });
 }
 
-// ===== Contact Inquiry Form Validation =====
-function initContactForm() {
-  const form = document.getElementById('contactInquiryForm');
-  if (!form) return;
+// ===== Responsive Image Carousel (1/3/4 cards based on viewport) =====
+function initImageCarousel() {
+  const track = document.getElementById('carouselTrack');
+  const prevBtn = document.querySelector('.carousel-btn-prev');
+  const nextBtn = document.querySelector('.carousel-btn-next');
+  const indicatorsContainer = document.getElementById('carouselIndicators');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  if (!track || !prevBtn || !nextBtn) return;
 
-    const name = form.querySelector('#contactName');
-    const email = form.querySelector('#contactEmail');
-    const phone = form.querySelector('#contactPhone');
-    const category = form.querySelector('#contactCategory');
-    const message = form.querySelector('#contactMessage');
-    const consent = form.querySelector('#contactConsent');
-    const successAlert = document.getElementById('contactSuccessAlert');
+  const cards = Array.from(track.querySelectorAll('.carousel-card'));
+  const totalCards = cards.length;
+  
+  let currentIndex = 0;
+  let cardsPerView = 4;
+  let isAnimating = false;
+  let autoplayInterval;
 
-    let isValid = true;
+  // Determine cards per view based on viewport
+  function updateCardsPerView() {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      cardsPerView = 1;
+    } else if (width <= 1024) {
+      cardsPerView = 3;
+    } else {
+      cardsPerView = 4;
+    }
+  }
 
-    [name, email, phone, category, message, consent].forEach(function(field) {
-      if (field) field.classList.remove('is-invalid');
+  // Calculate total pages
+  function getTotalPages() {
+    return Math.ceil(totalCards / cardsPerView);
+  }
+
+  // Update indicators
+  function updateIndicators() {
+    const totalPages = getTotalPages();
+    indicatorsContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalPages; i++) {
+      const button = document.createElement('button');
+      button.className = 'indicator';
+      button.setAttribute('data-index', i);
+      button.setAttribute('aria-label', `Slide ${i + 1}`);
+      if (i === 0) button.classList.add('active');
+      
+      button.addEventListener('click', () => goToSlide(i));
+      indicatorsContainer.appendChild(button);
+    }
+  }
+
+  // Update carousel position
+  function updateCarousel(animate = true) {
+    if (!animate) {
+      track.style.transition = 'none';
+    } else {
+      track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+
+    // Calculate offset based on current index and cards per view
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(track).gap) || 16;
+    const offset = -(currentIndex * cardsPerView) * (cardWidth + gap);
+    
+    track.style.transform = `translateX(${offset}px)`;
+
+    // Update indicators
+    const indicators = indicatorsContainer.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentIndex);
     });
+  }
 
-    if (name && !name.value.trim()) {
-      name.classList.add('is-invalid');
-      isValid = false;
-    }
+  // Next slide
+  function nextSlide() {
+    if (isAnimating) return;
+    isAnimating = true;
 
-    if (email && (!email.value.trim() || !isValidEmail(email.value.trim()))) {
-      email.classList.add('is-invalid');
-      isValid = false;
-    }
+    const totalPages = getTotalPages();
+    currentIndex = (currentIndex + 1) % totalPages;
+    updateCarousel(true);
 
-    if (phone && !phone.value.trim()) {
-      phone.classList.add('is-invalid');
-      isValid = false;
-    }
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
 
-    if (category && !category.value) {
-      category.classList.add('is-invalid');
-      isValid = false;
-    }
+  // Previous slide
+  function prevSlide() {
+    if (isAnimating) return;
+    isAnimating = true;
 
-    if (message && !message.value.trim()) {
-      message.classList.add('is-invalid');
-      isValid = false;
-    }
+    const totalPages = getTotalPages();
+    currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+    updateCarousel(true);
 
-    if (consent && !consent.checked) {
-      consent.classList.add('is-invalid');
-      isValid = false;
-    }
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
 
-    if (isValid) {
-      if (successAlert) {
-        successAlert.classList.remove('d-none');
-        successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Go to specific slide
+  function goToSlide(index) {
+    if (isAnimating || index === currentIndex) return;
+    isAnimating = true;
+
+    currentIndex = index;
+    updateCarousel(true);
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
+
+  // Handle window resize
+  function handleResize() {
+    const oldCardsPerView = cardsPerView;
+    updateCardsPerView();
+    
+    if (oldCardsPerView !== cardsPerView) {
+      const totalPages = getTotalPages();
+      // Adjust current index if needed
+      if (currentIndex >= totalPages) {
+        currentIndex = totalPages - 1;
       }
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.textContent = 'Inquiry Sent Successfully!';
-        submitBtn.classList.replace('btn-primary', 'btn-success');
-        submitBtn.disabled = true;
-      }
-      form.reset();
+      updateIndicators();
+      updateCarousel(false);
+    }
+  }
+
+  // Start autoplay
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 6000);
+  }
+
+  // Stop autoplay
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  // Event listeners
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  // Pause autoplay on hover
+  const carouselContainer = document.querySelector('.carousel-container');
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', stopAutoplay);
+    carouselContainer.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
     }
   });
+
+  // Touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const viewport = document.querySelector('.carousel-viewport');
+  if (viewport) {
+    viewport.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  }
+
+  // Window resize listener
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(handleResize, 150);
+  });
+
+  // Initialize
+  updateCardsPerView();
+  updateIndicators();
+  updateCarousel(false);
+  startAutoplay();
 }
 
 // ===== Smooth Scroll for anchor links =====
@@ -221,4 +273,9 @@ document.addEventListener('click', function(event) {
       }
     }
   }
+});
+
+// ===== Initialize all on page load =====
+document.addEventListener('DOMContentLoaded', function() {
+  initImageCarousel();
 });

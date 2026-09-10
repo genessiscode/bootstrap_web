@@ -20,7 +20,22 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"  aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home Overview</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#features">Why Choose Us</a></li>
+              <li><a class="dropdown-item" href="#rooms">Accommodations</a></li>
+              <li><a class="dropdown-item" href="#destinations">Destinations</a></li>
+              <li><a class="dropdown-item" href="#pricing">Rates &amp; Comparison</a></li>
+              <li><a class="dropdown-item" href="#booking">Book Now</a></li>
+              <li><a class="dropdown-item" href="#reviews">Guest Reviews</a></li>
+              <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="blogs.html">Travel Guides</a></li>
@@ -29,9 +44,8 @@
       </div>
     </div>
   </nav>
-  <!-- End Navigation -->
+ <!--ENd Navigation -->
 
-  <!-- ===== Hero Section ===== -->
   <header class="hero-section text-center py-5">
     <div class="container">
       <div class="row justify-content-center">

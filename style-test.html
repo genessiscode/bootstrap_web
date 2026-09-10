@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style Test</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Ultra high-priority style overrides to fix Bootstrap conflicts */
+    .btn.btn-action-primary,
+    a.btn.btn-action-primary,
+    button.btn.btn-action-primary {
+      background-color: #533afd !important;
+      border-color: #533afd !important;
+      color: #ffffff !important;
+    }
+    
+    .card,
+    .card-surface,
+    .card-feature {
+      background-color: #ffffff !important;
+      border: 1px solid #e3e8ee !important;
+    }
+    
+    .badge-soft-primary {
+      background-color: #e8ecf8 !important;
+      color: #4338ca !important;
+    }
+  </style>
+</head>
+<body class="p-5">
+  <h1>Style Test</h1>
+  
+  <h2>Buttons</h2>
+  <button class="btn btn-action-primary">Button Test</button>
+  <a href="#" class="btn btn-action-primary">Link Button Test</a>
+  
+  <h2 class="mt-4">Cards</h2>
+  <div class="card card-surface p-3" style="max-width: 300px;">
+    <div class="card-body">
+      <h5 class="card-title">Card Test</h5>
+      <p class="card-text">This card should have a white background.</p>
+    </div>
+  </div>
+  
+  <h2 class="mt-4">Badges</h2>
+  <span class="badge-soft-primary">Badge Test</span>
+  
+</body>
+</html>

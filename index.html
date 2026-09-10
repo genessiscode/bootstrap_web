@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="index.html" id="homeDropdown" role="button"  aria-expanded="false">
               Home
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="homeDropdown">
@@ -46,7 +46,7 @@
   </nav>
   <!-- End Navigation -->
 
-  <!-- ===== Member 1 & 5: Hero Section with Search Bar ===== -->
+  <!-- ===== Member 1 & 5: Hero Section with Dynamic Property Carousel ===== -->
   <header class="hero-section text-center py-5">
     <div class="container">
       <div class="row justify-content-center">
@@ -84,6 +84,55 @@
             <span class="trust-badge">
               <img src="assets/icons/icon-pin.png" class="feature-icon-sm me-2" alt="Pin"> Island-wide Coverage
             </span>
+          </div>
+
+          <!-- Multi-Image Carousel (Responsive: 1/3/4 Cards) -->
+          <div class="image-carousel">
+            <div class="carousel-container">
+              <button class="carousel-btn carousel-btn-prev" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                  <div class="carousel-card">
+                    <img src="assets/images/beach.jpg" alt="Beach Resort" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/tea_villa.jpg" alt="Tea Estate Villa" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/rockview_chalet.jpg" alt="Rockview Chalet" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/leapord.jpg" alt="Mountain Lodge" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/umar.jpg" alt="Ocean Penthouse" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/beach.jpg" alt="Beach Resort" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/tea_villa.jpg" alt="Tea Estate Villa" class="carousel-image">
+                  </div>
+                  <div class="carousel-card">
+                    <img src="assets/images/rockview_chalet.jpg" alt="Rockview Chalet" class="carousel-image">
+                  </div>
+                </div>
+              </div>
+
+              <button class="carousel-btn carousel-btn-next" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" id="carouselIndicators"></div>
           </div>
         </div>
       </div>
